@@ -7,7 +7,19 @@ const tabuleiro = [
     "branco", 
     "branco",
 ];
+let selecionado = null;
 
+export function seleciona(posicao){
+    if(selecionado === null){
+        selecionado = posicao;
+    } else if(selecionado === posicao){
+        selecionado = null;
+    }else{
+        mover(selecionado, posicao);
+        selecionado = null;
+    }
+    console.log(tabuleiro);
+}
 export function getTabuleiro(){
     return [...tabuleiro];
 }
