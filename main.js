@@ -7,6 +7,7 @@ const eTabuleiro = criaTabuleiro();
 document.body.append(eTabuleiro);
 
 const tabuleiro = getTabuleiro();
+
 for(let i=0; i<7; i++){
     const eDisco = criaDisco(i);
     eTabuleiro.append(eDisco);
@@ -20,6 +21,7 @@ for(let i=0; i<7; i++){
     }*/
    eDisco.dataset.cor = tabuleiro[i];
 }
+
 function atualizaDiscos(){
     const tabuleiro = getTabuleiro();
     for(let i = 0; i<eTabuleiro.children.length; i++){
@@ -27,12 +29,14 @@ function atualizaDiscos(){
         disco.dataset.cor = tabuleiro[disco.dataset.posicao];
     }
 }
+
 function discoClick(evento){
     const posicao = Number(evento.target.dataset.posicao);
     console.log("Click!" + posicao);
     seleciona(posicao);
     atualizaDiscos();
-;}
+}
+
 function criaDisco(posicao){
     const novoDisco = document.createElement("div");
     novoDisco.classList.add("disco");
@@ -40,6 +44,7 @@ function criaDisco(posicao){
     novoDisco.addEventListener("click", discoClick);
     return novoDisco;
 }
+
 function criaTabuleiro(){
     const novoTabuleiro = document.createElement("div");
     novoTabuleiro.classList.add("tabuleiro");
