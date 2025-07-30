@@ -7,7 +7,5 @@ document.body.append(eTabuleiro);
 function criaTabuleiro(){
     const novoTabuleiro = document.createElement("div");
     novoTabuleiro.classList.add("tabuleiro");
-    novoTabuleiro.style.backgroundColor = "lightgreen";
-    novoTabuleiro.style.minHeight = "25px";
     return novoTabuleiro;
 }
