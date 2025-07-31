@@ -20,9 +20,11 @@ export function seleciona(posicao){
     }
     console.log(tabuleiro);
 }
+
 export function getTabuleiro(){
     return [...tabuleiro];
 }
+
 function mover(origem, destino){
     if(tabuleiro[destino] !== "transparente") return;
     if(Math.abs(destino-origem)>2) return;
